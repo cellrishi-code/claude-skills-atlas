@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Claude Skills Atlas"
+message: "If you use this repository in academic or technical work, please cite it."
+type: software
+authors:
+  - family-names: Gupta
+    given-names: Rishi
+    affiliation: "NIT Warangal"
+repository-code: "https://github.com/cellrishi-code/claude-skills-atlas"
+license: MIT
+abstract: "A community-driven open-source library of reusable Claude skills, prompts, workflows, agents, and templates across coding, science, research, mathematics, and related domains."
+keywords:
+  - Claude
+  - Claude Code
+  - skills
+  - prompts
+  - workflows
+  - agents
+  - open source
+  - AI
