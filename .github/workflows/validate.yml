@@ -1,0 +1,82 @@
+name: Validate repository resources
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Markdown files
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=$(find . -type f -name '*.md'             -not -path './.git/*')
+          test -n "$files"
+          while IFS= read -r file; do
+            test -s "$file"
+          done <<< "$files"
+
+      - name: Validate skill structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in $(find skills -type f -name 'SKILL.md'); do
+            grep -qi '^## Purpose' "$file" || {
+              echo "Missing Purpose section: $file"
+              exit 1
+            }
+            grep -qi '^## Instructions' "$file" || {
+              echo "Missing Instructions section: $file"
+              exit 1
+            }
+          done
+
+      - name: Validate resource paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find skills prompts workflows agents templates -type f             | grep -E '(^|/)[A-Z0-9_]+\.(md|MD)$|(^|/)[^/]*[ _][^/]*\.md$'; then
+            echo "Found a resource path that does not follow the repository naming convention."
+            exit 1
+          fi
+
+      - name: Check internal Markdown links
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib, re
+
+          root = pathlib.Path(".")
+          pattern = re.compile(r'\[[^\]]+\]\(([^)#]+)(?:#[^)]+)?\)')
+          failures = []
+
+          for md in root.rglob("*.md"):
+              if ".git" in md.parts:
+                  continue
+              text = md.read_text(encoding="utf-8")
+              for target in pattern.findall(text):
+                  if "://" in target or target.startswith("mailto:"):
+                      continue
+                  resolved = (md.parent / target).resolve()
+                  try:
+                      resolved.relative_to(root.resolve())
+                  except ValueError:
+                      continue
+                  if not resolved.exists():
+                      failures.append(f"{md}: {target}")
+
+          if failures:
+              print("Broken internal links:")
+              print("\n".join(failures))
+              raise SystemExit(1)
+
+          print("Internal Markdown links are valid.")
+          PY
