@@ -484,6 +484,158 @@
         ],
         "intended_use": "Analyze physics research claims and experimental or theoretical evidence."
       }
+    },
+    {
+      "name": "data-cleaning",
+      "path": "skills/python/data-cleaning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "python",
+        "pandas",
+        "cleaning"
+      ],
+      "capabilities": [
+        "python",
+        "pandas",
+        "cleaning"
+      ],
+      "metadata": {
+        "name": "data-cleaning",
+        "title": "Python Data Cleaning",
+        "type": "skill",
+        "domain": "python-data-science",
+        "tags": [
+          "python",
+          "pandas",
+          "cleaning"
+        ],
+        "intended_use": "Clean tabular data reproducibly."
+      }
+    },
+    {
+      "name": "data-visualization",
+      "path": "skills/python/data-visualization/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "python",
+        "visualization",
+        "matplotlib"
+      ],
+      "capabilities": [
+        "python",
+        "visualization",
+        "matplotlib"
+      ],
+      "metadata": {
+        "name": "data-visualization",
+        "title": "Python Data Visualization",
+        "type": "skill",
+        "domain": "python-data-science",
+        "tags": [
+          "python",
+          "visualization",
+          "matplotlib"
+        ],
+        "intended_use": "Choose and build clear data visualizations."
+      }
+    },
+    {
+      "name": "evidence-checker",
+      "path": "skills/research/evidence-checker/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "evidence-checker",
+        "description": "Use when reviewing factual claims, research notes, technical statements, or literature summaries against supplied evidence."
+      }
+    },
+    {
+      "name": "evidence-comparison",
+      "path": "skills/research/evidence-comparison/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "literature",
+        "evidence",
+        "claims"
+      ],
+      "capabilities": [
+        "literature",
+        "evidence",
+        "claims"
+      ],
+      "metadata": {
+        "name": "evidence-comparison",
+        "title": "Evidence Comparison",
+        "type": "skill",
+        "domain": "research",
+        "tags": [
+          "literature",
+          "evidence",
+          "claims"
+        ],
+        "intended_use": "Compare multiple sources without treating disagreement as automatically equivalent evidence."
+      }
+    },
+    {
+      "name": "experimental-planning",
+      "path": "skills/research/experimental-planning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "experiment",
+        "reproducibility",
+        "controls"
+      ],
+      "capabilities": [
+        "experiment",
+        "reproducibility",
+        "controls"
+      ],
+      "metadata": {
+        "name": "experimental-planning",
+        "title": "Experimental Planning",
+        "type": "skill",
+        "domain": "research",
+        "tags": [
+          "experiment",
+          "reproducibility",
+          "controls"
+        ],
+        "intended_use": "Design a reproducible research experiment or study plan."
+      }
+    },
+    {
+      "name": "literature-synthesizer",
+      "path": "skills/research/literature-synthesizer/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "literature-synthesizer",
+        "description": "Use when synthesizing multiple research papers or supplied sources into themes, disagreements, evidence gaps, and research opportunities."
+      }
+    },
+    {
+      "name": "research-question",
+      "path": "skills/research/research-question/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "research-question",
+        "description": "Turn a broad research request into a precise, answerable investigation with claims, evidence requirements, search strategy, and uncertainty tracking."
+      }
+    },
+    {
+      "name": "source-verification",
+      "path": "skills/research/source-verification/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "source-verification",
+        "description": "Verify important factual claims before they are repeated in research, technical writing, or documentation. Use when sources may be outdated, secondary, conflicting, or difficult to interpret."
+      }
     }
   ]
 }
