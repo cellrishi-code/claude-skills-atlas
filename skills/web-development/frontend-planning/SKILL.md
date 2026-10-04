@@ -1,15 +1,20 @@
 ---
 name: frontend-planning
-title: Frontend Planning
-type: skill
-domain: web-development
+category: web-development
 tags: [frontend, architecture, accessibility]
-intended_use: Plan a frontend feature before implementation.
 ---
 
 # Frontend Planning
 
-## Process
+## Purpose
+
+Plan a frontend feature with clear user flows, component boundaries, states, accessibility requirements, and verification criteria.
+
+## When to use
+
+Use before implementing a frontend feature or when an existing UI needs structured planning.
+
+## Instructions
 
 1. Identify user flows and required states.
 2. Inspect existing components and styling conventions.
@@ -17,11 +22,29 @@ intended_use: Plan a frontend feature before implementation.
 4. Account for loading, empty, error, keyboard, and responsive states.
 5. Include accessibility requirements.
 6. Define verification criteria before implementation.
+7. Do not invent APIs or framework conventions not present in the project.
 
-## Output
+## Inputs
 
-Provide affected files, component structure, state model, accessibility checks, and verification steps.
+- Feature requirements
+- Existing frontend code and conventions
+- API or data dependencies
+- Accessibility and responsive constraints
+
+## Outputs
+
+- Affected files
+- Component structure
+- State model
+- Accessibility checks
+- Verification steps
+
+## Example
+
+User: "Plan a dashboard page for this existing React app."
+
+Expected behavior: inspect current components and plan the dashboard using established project patterns.
 
 ## Limitations
 
-Do not invent APIs or framework conventions not present in the project.
+Planning cannot fully predict browser-specific behavior or APIs that are not yet implemented.
