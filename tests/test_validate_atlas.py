@@ -62,6 +62,37 @@ class TestValidateAtlas(unittest.TestCase):
         errors = validate_catalog(self.root)
         self.assertTrue(any("missing required section 'Instructions'" in e for e in errors))
 
+
+    def test_external_resource_requires_license_and_attribution(self):
+        (self.root / "prompts" / "derived.md").write_text(
+            "---\nname: derived\nsource: Example Guide\n---\n\n# Derived\n",
+            encoding="utf-8",
+        )
+        errors = validate_catalog(self.root)
+        self.assertTrue(any("missing 'license'" in e for e in errors))
+        self.assertTrue(any("missing 'attribution'" in e for e in errors))
+
+    def test_external_resource_with_license_and_attribution_is_valid(self):
+        (self.root / "prompts" / "derived.md").write_text(
+            "---\nname: derived\nsource: Example Guide\n"
+            "source_url: https://example.com/guide\n"
+            "license: CC-BY-4.0\n"
+            "attribution: Example Author\n---\n\n# Derived\n",
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_catalog(self.root), [])
+
+    def test_invalid_source_url(self):
+        (self.root / "prompts" / "derived.md").write_text(
+            "---\nname: derived\nsource: Example Guide\n"
+            "source_url: example.com/guide\n"
+            "license: CC-BY-4.0\n"
+            "attribution: Example Author\n---\n\n# Derived\n",
+            encoding="utf-8",
+        )
+        errors = validate_catalog(self.root)
+        self.assertTrue(any("invalid 'source_url'" in e for e in errors))
+
     def test_duplicate_prompt_names(self):
         (self.root / "prompts" / "first.md").write_text(
             "# Duplicate Prompt\n\nPrompt body.", encoding="utf-8"
