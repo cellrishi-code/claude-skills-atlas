@@ -636,6 +636,71 @@
         "name": "source-verification",
         "description": "Verify important factual claims before they are repeated in research, technical writing, or documentation. Use when sources may be outdated, secondary, conflicting, or difficult to interpret."
       }
+    },
+    {
+      "name": "api-design",
+      "path": "skills/web-development/api-design/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "api",
+        "backend",
+        "http"
+      ],
+      "capabilities": [
+        "api",
+        "backend",
+        "http"
+      ],
+      "metadata": {
+        "name": "api-design",
+        "title": "API Design",
+        "type": "skill",
+        "domain": "web-development",
+        "tags": [
+          "api",
+          "backend",
+          "http"
+        ],
+        "intended_use": "Design a maintainable HTTP API."
+      }
+    },
+    {
+      "name": "frontend-planning",
+      "path": "skills/web-development/frontend-planning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "frontend",
+        "architecture",
+        "accessibility"
+      ],
+      "capabilities": [
+        "frontend",
+        "architecture",
+        "accessibility"
+      ],
+      "metadata": {
+        "name": "frontend-planning",
+        "title": "Frontend Planning",
+        "type": "skill",
+        "domain": "web-development",
+        "tags": [
+          "frontend",
+          "architecture",
+          "accessibility"
+        ],
+        "intended_use": "Plan a frontend feature before implementation."
+      }
+    },
+    {
+      "name": "technical-editor",
+      "path": "skills/writing/technical-editor/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "technical-editor",
+        "description": "Use when editing technical writing for clarity, structure, precision, grammar, and consistent terminology while preserving the author's meaning."
+      }
     }
   ]
 }
