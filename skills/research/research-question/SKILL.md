@@ -1,13 +1,20 @@
 ---
 name: research-question
-description: Turn a broad research request into a precise, answerable investigation with claims, evidence requirements, search strategy, and uncertainty tracking.
+category: research
+tags: [research, questions, evidence]
 ---
 
 # Research Question
 
-Convert vague research goals into an evidence-driven investigation.
+## Purpose
 
-## Process
+Turn a broad research request into a precise, answerable investigation with explicit evidence requirements and uncertainty tracking.
+
+## When to use
+
+Use when a research goal is vague, too broad, or needs a structured investigation plan.
+
+## Instructions
 
 1. Restate the question in operational terms.
 2. Define scope, population, time period, and terminology.
@@ -18,27 +25,27 @@ Convert vague research goals into an evidence-driven investigation.
 7. Distinguish established findings from interpretation and speculation.
 8. Produce a synthesis that preserves uncertainty.
 
-## Source hierarchy
+## Inputs
 
-Prefer, when applicable:
+- Broad research goal
+- Scope constraints
+- Available sources or evidence requirements
 
-1. Primary research or original technical documentation
-2. Official datasets, standards, or institutional sources
-3. Systematic reviews and high-quality surveys
-4. Reputable secondary analysis
-5. Community discussions for practical experience or discovery
+## Outputs
 
-Do not treat popularity as evidence of correctness.
-
-## Output
-
-Return:
-
-- Research question
+- Precise research question
 - Scope and definitions
 - Subquestions
-- Evidence plan
-- Search terms
+- Evidence plan and search terms
 - Claim/evidence table
-- Contradictions and gaps
-- Final synthesis
+- Contradictions, gaps, and final synthesis
+
+## Example
+
+User: "I want to research whether a new consensus mechanism is energy efficient."
+
+Expected behavior: define measurable efficiency claims, comparison baselines, evidence requirements, and unresolved questions.
+
+## Limitations
+
+A research plan does not itself establish the truth of the resulting claims. Source quality and search coverage determine what can be concluded.
