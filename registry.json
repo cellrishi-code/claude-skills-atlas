@@ -165,6 +165,157 @@
         "name": "codebase-understanding",
         "description": "Build a reliable mental model of an unfamiliar repository before making changes. Use when entering a new codebase, investigating architecture, or when the user asks where a feature belongs."
       }
+    },
+    {
+      "name": "debug-systematically",
+      "path": "skills/coding/debug-systematically/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "debug-systematically",
+        "description": "Diagnose software failures systematically instead of guessing. Use for bugs, failing tests, unexpected output, crashes, regressions, and inconsistent behavior."
+      }
+    },
+    {
+      "name": "implementation-planner",
+      "path": "skills/coding/implementation-planner/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "implementation-planner",
+        "description": "Use when a coding task is large enough to require repository inspection, a plan, affected files, risks, and verification before implementation."
+      }
+    },
+    {
+      "name": "implementation-review",
+      "path": "skills/coding/implementation-review/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "implementation-review",
+        "description": "Review an implementation against its requirements, repository conventions, correctness risks, tests, and maintainability. Use before opening a pull request or when reviewing completed work."
+      }
+    },
+    {
+      "name": "test-and-verify",
+      "path": "skills/coding/test-and-verify/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "test-and-verify",
+        "description": "Use after implementing code to systematically verify behavior, tests, regressions, and important edge cases."
+      }
+    },
+    {
+      "name": "algorithm-learning",
+      "path": "skills/computer-science/algorithm-learning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "algorithms",
+        "dsa",
+        "education"
+      ],
+      "capabilities": [
+        "algorithms",
+        "dsa",
+        "education"
+      ],
+      "metadata": {
+        "name": "algorithm-learning",
+        "title": "Algorithms Learning",
+        "type": "skill",
+        "domain": "computer-science",
+        "tags": [
+          "algorithms",
+          "dsa",
+          "education"
+        ],
+        "intended_use": "Teach an algorithms concept through explanation and practice."
+      }
+    },
+    {
+      "name": "system-design-basics",
+      "path": "skills/computer-science/system-design-basics/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "systems",
+        "architecture",
+        "scalability"
+      ],
+      "capabilities": [
+        "systems",
+        "architecture",
+        "scalability"
+      ],
+      "metadata": {
+        "name": "system-design-basics",
+        "title": "System Design Basics",
+        "type": "skill",
+        "domain": "computer-science",
+        "tags": [
+          "systems",
+          "architecture",
+          "scalability"
+        ],
+        "intended_use": "Structure an introductory system-design discussion."
+      }
+    },
+    {
+      "name": "defensive-security-review",
+      "path": "skills/cybersecurity/defensive-security-review/SKILL.md",
+      "version": "1.0.0",
+      "category": "cybersecurity",
+      "tags": [
+        "security",
+        "code-review",
+        "threat-modeling",
+        "authorized-testing"
+      ],
+      "capabilities": [
+        "security",
+        "code-review",
+        "threat-modeling",
+        "authorized-testing"
+      ],
+      "metadata": {
+        "name": "defensive-security-review",
+        "category": "cybersecurity",
+        "tags": [
+          "security",
+          "code-review",
+          "threat-modeling",
+          "authorized-testing"
+        ]
+      }
+    },
+    {
+      "name": "threat-modeling",
+      "path": "skills/cybersecurity/threat-modeling/SKILL.md",
+      "version": "1.0.0",
+      "category": "cybersecurity",
+      "tags": [
+        "threat-modeling",
+        "architecture",
+        "security-design"
+      ],
+      "capabilities": [
+        "threat-modeling",
+        "architecture",
+        "security-design"
+      ],
+      "metadata": {
+        "name": "threat-modeling",
+        "category": "cybersecurity",
+        "tags": [
+          "threat-modeling",
+          "architecture",
+          "security-design"
+        ]
+      }
     }
   ]
 }
