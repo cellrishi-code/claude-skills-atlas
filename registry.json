@@ -316,6 +316,174 @@
           "security-design"
         ]
       }
+    },
+    {
+      "name": "data-analysis",
+      "path": "skills/data/analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "data-analysis",
+        "description": "Use when analyzing a dataset and producing reproducible findings, tables, visualizations, or statistical conclusions."
+      }
+    },
+    {
+      "name": "tutor",
+      "path": "skills/education/tutor/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "tutor",
+        "description": "Use when teaching a technical concept and the learner needs a structured explanation, examples, checks for understanding, and practice."
+      }
+    },
+    {
+      "name": "experiment-analysis",
+      "path": "skills/machine-learning/experiment-analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "experiments",
+        "reproducibility",
+        "tracking"
+      ],
+      "capabilities": [
+        "experiments",
+        "reproducibility",
+        "tracking"
+      ],
+      "metadata": {
+        "name": "experiment-analysis",
+        "title": "ML Experiment Analysis",
+        "type": "skill",
+        "domain": "machine-learning",
+        "tags": [
+          "experiments",
+          "reproducibility",
+          "tracking"
+        ],
+        "intended_use": "Compare machine-learning experiments reproducibly."
+      }
+    },
+    {
+      "name": "model-evaluation",
+      "path": "skills/machine-learning/model-evaluation/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "evaluation",
+        "metrics",
+        "experiments"
+      ],
+      "capabilities": [
+        "evaluation",
+        "metrics",
+        "experiments"
+      ],
+      "metadata": {
+        "name": "model-evaluation",
+        "title": "Machine Learning Model Evaluation",
+        "type": "skill",
+        "domain": "machine-learning",
+        "tags": [
+          "evaluation",
+          "metrics",
+          "experiments"
+        ],
+        "intended_use": "Evaluate an ML model without relying on a single metric."
+      }
+    },
+    {
+      "name": "numerical-methods",
+      "path": "skills/mathematics/numerical-methods/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "numerical-analysis",
+        "algorithms",
+        "error"
+      ],
+      "capabilities": [
+        "numerical-analysis",
+        "algorithms",
+        "error"
+      ],
+      "metadata": {
+        "name": "numerical-methods",
+        "title": "Numerical Methods",
+        "type": "skill",
+        "domain": "mathematics",
+        "tags": [
+          "numerical-analysis",
+          "algorithms",
+          "error"
+        ],
+        "intended_use": "Solve numerical-method problems with explicit convergence and error checks."
+      }
+    },
+    {
+      "name": "mathematics-problem-solver",
+      "path": "skills/mathematics/problem-solver/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "mathematics-problem-solver",
+        "description": "Use when solving a mathematics problem and the user wants a rigorous, readable derivation with assumptions and verification."
+      }
+    },
+    {
+      "name": "proof-solving",
+      "path": "skills/mathematics/proof-solving/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "proofs",
+        "reasoning",
+        "mathematics"
+      ],
+      "capabilities": [
+        "proofs",
+        "reasoning",
+        "mathematics"
+      ],
+      "metadata": {
+        "name": "proof-solving",
+        "title": "Mathematics Proof Solving",
+        "type": "skill",
+        "domain": "mathematics",
+        "tags": [
+          "proofs",
+          "reasoning",
+          "mathematics"
+        ],
+        "intended_use": "Structure rigorous mathematical proofs."
+      }
+    },
+    {
+      "name": "physics-research-analysis",
+      "path": "skills/physics/research-analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "physics",
+        "research",
+        "evidence"
+      ],
+      "capabilities": [
+        "physics",
+        "research",
+        "evidence"
+      ],
+      "metadata": {
+        "name": "physics-research-analysis",
+        "title": "Physics Research Analysis",
+        "type": "skill",
+        "domain": "physics",
+        "tags": [
+          "physics",
+          "research",
+          "evidence"
+        ],
+        "intended_use": "Analyze physics research claims and experimental or theoretical evidence."
+      }
     }
   ]
 }
