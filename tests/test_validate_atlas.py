@@ -70,7 +70,7 @@ class TestValidateAtlas(unittest.TestCase):
             "# Duplicate Prompt\n\nAnother body.", encoding="utf-8"
         )
         errors = validate_catalog(self.root)
-        self.assertTrue(any("Duplicate prompts name" in e for e in errors))
+        self.assertTrue(any("Duplicate prompt name" in e for e in errors))
 
 
 if __name__ == "__main__":
