@@ -56,6 +56,41 @@ def frontmatter(text: str) -> str:
     return match.group(1) if match else ""
 
 
+
+def metadata_field(text: str, field: str) -> str:
+    """Return a simple front-matter field value, or an empty string."""
+    match = re.search(rf"(?im)^{re.escape(field)}:\s*(.+)$", frontmatter(text))
+    return match.group(1).strip().strip("'\\\"") if match else ""
+
+
+def validate_attribution_metadata(path: Path, text: str, root_dir: Path) -> list:
+    """Validate attribution metadata when a resource declares external material."""
+    errors = []
+    if not frontmatter(text):
+        return errors
+
+    source = metadata_field(text, "source")
+    source_url = metadata_field(text, "source_url")
+    derived_from = metadata_field(text, "derived_from")
+    license_name = metadata_field(text, "license")
+    attribution = metadata_field(text, "attribution")
+
+    if source or source_url or derived_from:
+        rel = path.relative_to(root_dir).as_posix()
+        if not license_name:
+            errors.append(f"Resource with external source is missing 'license': {rel}")
+        if not attribution:
+            errors.append(f"Resource with external source is missing 'attribution': {rel}")
+
+    if source_url and not re.match(r"^https?://\S+$", source_url):
+        rel = path.relative_to(root_dir).as_posix()
+        errors.append(
+            f"Resource has invalid 'source_url' (expected http(s) URL): {rel}"
+        )
+
+    return errors
+
+
 def resource_name(path: Path, text: str) -> str:
     if path.name == "SKILL.md":
         match = re.search(r"(?im)^name:\s*([^\n]+)", frontmatter(text))
@@ -100,6 +135,8 @@ def validate_catalog(root_dir: Path) -> list:
                 for section in REQUIRED_SKILL_SECTIONS:
                     if section.casefold() not in headings:
                         errors.append(f"Skill missing required section '{section}': {rel}")
+
+            errors.extend(validate_attribution_metadata(path, text, root_dir))
 
             if directory in seen_names:
                 name = resource_name(path, text)

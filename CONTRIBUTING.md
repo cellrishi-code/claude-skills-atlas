@@ -121,7 +121,7 @@ Maintainers may:
 
 Only submit content you are allowed to redistribute.
 
-When adapting an existing work, include the original source and relevant license/attribution information.
+When adapting an existing work, include the original source and relevant license/attribution information. See [Licensing and Attribution](docs/licensing-and-attribution.md) for the metadata format used by the validator.
 
 ## Common Development Commands
 
