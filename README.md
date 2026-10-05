@@ -347,6 +347,7 @@ See [SECURITY.md](SECURITY.md) and [docs/community-sources.md](docs/community-so
 | [CATALOG.md](CATALOG.md) | Resource catalog |
 | [docs/architecture.md](docs/architecture.md) | Repository architecture |
 | [docs/community-sources.md](docs/community-sources.md) | Curation policy |
+| [docs/testing-prompts-and-skills.md](docs/testing-prompts-and-skills.md) | How to test prompts and skills |
 | [Skill Template](templates/skill-template.md) | Create a skill |
 | [Prompt Template](templates/prompt-template.md) | Create a prompt |
 | [ChatGPT Integration](plugins/chatgpt-atlas/README.md) | ChatGPT-compatible integration scaffold |

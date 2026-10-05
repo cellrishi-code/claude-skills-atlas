@@ -142,6 +142,8 @@ Where practical, test prompts or skills with Claude and describe what was tested
 
 Do not claim a result is "verified" or "works" unless you actually evaluated it.
 
+See [Testing Prompts and Skills](docs/testing-prompts-and-skills.md) for a step-by-step guide and a template for recording the model, version, and setup you tested with.
+
 ## Security
 
 Never publish secrets or private data.

@@ -5,7 +5,7 @@
 3. Create a branch such as `feat/python-data-cleaning`.
 4. Add the resource under the appropriate directory.
 5. Follow the relevant template.
-6. Test instructions and examples.
+6. Test instructions and examples. See [Testing Prompts and Skills](testing-prompts-and-skills.md).
 7. Run `python scripts/validate_atlas.py`.
 8. Commit with a concise message such as `feat: add data cleaning skill`.
 9. Open a pull request describing what changed and how it was tested.
