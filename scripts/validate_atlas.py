@@ -93,6 +93,28 @@ def validate_catalog(root_dir: Path) -> list:
                         if not re.search(rf"(?im)^{re.escape(field)}:\s*.+$", fm):
                             errors.append(f"Skill missing frontmatter field '{field}': {rel}")
 
+                        recommendation_fields = (
+                        "recommendation_use_cases",
+                        "recommendation_audience",
+                        "recommendation_domain",
+                        "recommendation_prerequisites",
+                        "recommendation_related_skills",
+                        )
+
+                        present_recommendation_fields = [
+                            field
+                            for field in recommendation_fields
+                            if re.search(rf"(?im)^{re.escape(field)}:\s*.+$", fm)
+                        ]
+
+                        if (
+                            present_recommendation_fields
+                            and len(present_recommendation_fields) != len(recommendation_fields)
+                        ):
+                            errors.append(
+                                f"Skill recommendation metadata must define all fields: {rel}"
+                            )
+
                 if not re.search(r"(?im)^# .+", text):
                     errors.append(f"Skill lacks a heading: {rel}")
 
