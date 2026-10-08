@@ -2,6 +2,11 @@
 name: code-review
 category: coding
 tags: [code-review, software-engineering, debugging]
+recommendation_use_cases: [review source code, identify bugs, assess maintainability, assess security and clarity]
+recommendation_audience: [software developers, software engineers]
+recommendation_domain: software-engineering
+recommendation_prerequisites: [source code to review]
+recommendation_related_skills: [coding/debug-systematically, coding/implementation-review]
 ---
 
 # Code Review Skill

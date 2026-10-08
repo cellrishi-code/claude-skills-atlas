@@ -51,6 +51,60 @@ class TestValidateAtlas(unittest.TestCase):
         )
         self.assertEqual(validate_catalog(self.root), [])
 
+
+
+    def test_skill_valid_recommendation_metadata(self):
+        skill = self.root / "skills" / "example"
+        skill.mkdir()
+        (skill / "SKILL.md").write_text(
+            "---\n"
+            "name: example\n"
+            "category: coding\n"
+            "tags: [test]\n"
+            "recommendation_use_cases: [review code, find bugs]\n"
+            "recommendation_audience: [developers]\n"
+            "recommendation_domain: software-engineering\n"
+            "recommendation_prerequisites: [source code]\n"
+            "recommendation_related_skills: [coding/debug-systematically]\n"
+            "---\n\n"
+            "# Example\n\n"
+            "## Purpose\ntext\n"
+            "## When to use\ntext\n"
+            "## Instructions\ntext\n"
+            "## Inputs\ntext\n"
+            "## Outputs\ntext\n"
+            "## Example\ntext\n"
+            "## Limitations\ntext\n",
+            encoding="utf-8",
+        )
+        self.assertEqual(validate_catalog(self.root), [])
+
+    def test_skill_incomplete_recommendation_metadata(self):
+        skill = self.root / "skills" / "example"
+        skill.mkdir()
+        (skill / "SKILL.md").write_text(
+            "---\n"
+            "name: example\n"
+            "category: coding\n"
+            "tags: [test]\n"
+            "recommendation_use_cases: [review code]\n"
+            "---\n\n"
+            "# Example\n\n"
+            "## Purpose\ntext\n"
+            "## When to use\ntext\n"
+            "## Instructions\ntext\n"
+            "## Inputs\ntext\n"
+            "## Outputs\ntext\n"
+            "## Example\ntext\n"
+            "## Limitations\ntext\n",
+            encoding="utf-8",
+        )
+        errors = validate_catalog(self.root)
+        self.assertTrue(
+            any("recommendation metadata must define all fields" in e for e in errors)
+        )
+
+
     def test_skill_missing_required_section(self):
         skill = self.root / "skills" / "example"
         skill.mkdir()
