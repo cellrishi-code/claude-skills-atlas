@@ -1,0 +1,99 @@
+name: Contributor Onboarding
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  onboarding:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check contributor requirements
+        id: requirements
+        shell: bash
+        run: |
+          files="$(git diff --name-only \
+            "${{ github.event.pull_request.base.sha }}" \
+            "${{ github.event.pull_request.head.sha }}")"
+
+          supported=false
+          skill_changed=false
+          missing=""
+
+          while IFS= read -r file; do
+            case "$file" in
+              skills/*|prompts/*|workflows/*|agents/*|templates/*)
+                supported=true
+                ;;
+            esac
+
+            case "$file" in
+              skills/*/SKILL.md)
+                 skill_changed=true
+                if ! grep -q '^---' "$file"; then
+                  missing="${missing}frontmatter, "
+                else
+                  for field in name category tags; do
+                    if ! grep -q "^${field}:" "$file"; then
+                      missing="${missing}${field}, "
+                    fi
+                  done
+                fi
+                ;;
+            esac
+          done <<< "$files"
+
+          if [ "$skill_changed" = true ]; then
+            if ! printf '%s\n' "$files" | grep -q '^tests/'; then
+              missing="${missing}tests, "
+            fi
+          fi
+
+          missing="${missing%, }"
+
+          echo "supported=$supported" >> "$GITHUB_OUTPUT"
+          echo "missing=$missing" >> "$GITHUB_OUTPUT"
+
+      - name: Add contributor guidance
+        if: steps.requirements.outputs.supported == 'true'
+        uses: actions/github-script@v7
+        env:
+          MISSING: ${{ steps.requirements.outputs.missing }}
+        with:
+          script: |
+            const missing = process.env.MISSING;
+
+            let body = [
+              "Thanks for contributing to Claude Skills Atlas! 👋",
+              "",
+              "Please review the [contributor guide](https://github.com/${{ github.repository }}/blob/main/CONTRIBUTING.md) and [testing guide](https://github.com/${{ github.repository }}/blob/main/docs/testing-prompts-and-skills.md)."
+            ];
+
+            if (missing) {
+              body.push(
+                "",
+                `Possible missing requirement(s): \`${missing}\`.`
+              );
+            }
+
+            body.push(
+              "",
+              "_This is an informational check and does not block the pull request._"
+            );
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body.join("\n")
+            });
