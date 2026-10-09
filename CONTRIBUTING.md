@@ -87,7 +87,11 @@ Before opening a PR:
 - Examples are realistic and safe.
 - No passwords, API keys, tokens, session cookies, private documents, or personal data are included.
 - External claims and adapted material are attributed where appropriate.
-- Obvious duplicates were checked first.
+- Check existing skills for duplicate names and overlapping purposes before creating a new skill.
+- Run `python scripts/validate_atlas.py` to check for duplicate resource names and flag highly similar skill Purpose descriptions for review.
+- If an existing skill covers the same task, extend it instead of creating a duplicate.
+- Keep intentional variants only when they serve meaningfully different use cases, audiences, inputs, or outputs. Explain the distinction in the skill's Purpose and When to use sections.
+- Treat overlap warnings as review prompts, not automatic proof that two skills are duplicates.
 - The contribution does not intentionally contain prompt injection designed to compromise unrelated users, tools, or systems.
 - The contribution follows the folder structure and naming rules.
 
