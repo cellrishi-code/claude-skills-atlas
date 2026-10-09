@@ -1,7 +1,9 @@
-import tempfile
+﻿import tempfile
 import unittest
 from pathlib import Path
 import sys
+from contextlib import redirect_stdout
+from io import StringIO
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "scripts"))
 from validate_atlas import validate_catalog
@@ -126,6 +128,98 @@ class TestValidateAtlas(unittest.TestCase):
         errors = validate_catalog(self.root)
         self.assertTrue(any("Duplicate prompt name" in e for e in errors))
 
+    def test_duplicate_skill_names(self):
+        for folder in ("first", "second"):
+            skill = self.root / "skills" / folder
+            skill.mkdir()
+            (skill / "SKILL.md").write_text(
+                "---\nname: code-review\ncategory: coding\ntags: [test]\n---\n\n"
+                "# Code Review\n\n"
+                "## Purpose\ntext\n"
+                "## When to use\ntext\n"
+                "## Instructions\ntext\n"
+                "## Inputs\ntext\n"
+                "## Outputs\ntext\n"
+                "## Example\ntext\n"
+                "## Limitations\ntext\n",
+                encoding="utf-8",
+            )
 
+        output = StringIO()
+        with redirect_stdout(output):
+            errors = validate_catalog(self.root)
+        self.assertTrue(any("Duplicate skill name" in e for e in errors))
+
+    def test_similar_skill_descriptions_are_flagged(self):
+        skills = {
+            "code-review": (
+                "Code Review",
+                "Review source code to identify bugs, security issues, "
+                "and maintainability problems.",
+            ),
+            "review-source-code": (
+                "Review Source Code",
+                "Review source code to identify bugs, security issues, "
+                "and maintainability problems.",
+            ),
+        }
+
+        for folder, (name, description) in skills.items():
+            skill = self.root / "skills" / folder
+            skill.mkdir()
+            (skill / "SKILL.md").write_text(
+                f"---\nname: {folder}\ncategory: coding\ntags: [test]\n---\n\n"
+                f"# {name}\n\n"
+                f"## Purpose\n{description}\n"
+                "## When to use\ntext\n"
+                "## Instructions\ntext\n"
+                "## Inputs\ntext\n"
+                "## Outputs\ntext\n"
+                "## Example\ntext\n"
+                "## Limitations\ntext\n",
+                encoding="utf-8",
+            )
+
+        output = StringIO()
+        with redirect_stdout(output):
+            validate_catalog(self.root)
+
+        self.assertIn("WARNING: Similar skills", output.getvalue())
+
+
+    def test_similar_but_not_identical_skill_descriptions_are_flagged(self):
+        descriptions = {
+            "code-review": (
+                "Code Review",
+                "Review source code to identify bugs, security issues, "
+                "and maintainability problems.",
+            ),
+            "review-source-code": (
+                "Review Source Code",
+                "Review source code to identify bugs, security issues, "
+                "and maintainability problems in software.",
+            ),
+        }
+
+        for folder, (name, description) in descriptions.items():
+            skill = self.root / "skills" / folder
+            skill.mkdir()
+            (skill / "SKILL.md").write_text(
+                f"---\nname: {folder}\ncategory: coding\ntags: [test]\n---\n\n"
+                f"# {name}\n\n"
+                f"## Purpose\n{description}\n"
+                "## When to use\ntext\n"
+                "## Instructions\ntext\n"
+                "## Inputs\ntext\n"
+                "## Outputs\ntext\n"
+                "## Example\ntext\n"
+                "## Limitations\ntext\n",
+                encoding="utf-8",
+            )
+
+        output = StringIO()
+        with redirect_stdout(output):
+            validate_catalog(self.root)
+        self.assertIn("WARNING: Similar skills", output.getvalue())
 if __name__ == "__main__":
     unittest.main()

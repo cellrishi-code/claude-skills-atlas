@@ -69,6 +69,20 @@ def validate_catalog(root_dir: Path) -> list:
     errors = []
     seen_names = {"skills": {}, "prompts": {}}
 
+    skill_descriptions = []
+
+    def normalize_text(text: str) -> str:
+        text = re.sub(r"[`#*_>\[\]()-]", " ", text.lower())
+        return " ".join(text.split())
+
+    def extract_skill_description(text: str) -> str:
+        purpose = re.search(
+            r"(?ims)^##\s+Purpose\s*\n(.*?)(?=^##\s+|\Z)", text
+        )
+        if purpose:
+            return normalize_text(purpose.group(1))
+        return normalize_text(text)
+
     for directory in ["skills", "prompts", "workflows", "agents"]:
         base = root_dir / directory
         if not base.exists():
@@ -123,6 +137,10 @@ def validate_catalog(root_dir: Path) -> list:
                     if section.casefold() not in headings:
                         errors.append(f"Skill missing required section '{section}': {rel}")
 
+                description = extract_skill_description(text)
+                if description:
+                    skill_descriptions.append((rel, description))
+
             if directory in seen_names:
                 name = resource_name(path, text)
                 key = name.casefold()
@@ -133,6 +151,26 @@ def validate_catalog(root_dir: Path) -> list:
                     )
                 else:
                     seen_names[directory][key] = rel
+
+    # Flag highly similar Purpose descriptions for contributor review.
+    from difflib import SequenceMatcher
+
+    warnings = []
+    for index, (rel, description) in enumerate(skill_descriptions):
+        for other_rel, other_description in skill_descriptions[:index]:
+            similarity = SequenceMatcher(
+                None, description, other_description
+            ).ratio()
+
+            if similarity >= 0.8:
+                warnings.append(
+                    f"Similar skills: {rel} and {other_rel} have "
+                    f"similar Purpose descriptions ({similarity:.0%}); "
+                    "review for overlap."
+                )
+
+    for warning in warnings:
+        print(f"WARNING: {warning}")
 
     # Check relative Markdown links point to existing files and anchors.
     for path in root_dir.rglob("*.md"):
