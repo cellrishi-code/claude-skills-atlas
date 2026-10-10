@@ -25,6 +25,8 @@ A skill should normally contain:
 - Example
 - Limitations
 
+Starting from scratch? Copy [the skill contributor starter template](templates/skill-starter/SKILL.md), replace its placeholders, and adapt the sections to your use case.
+
 ### Prompts
 
 Put copy-paste prompt templates under:
