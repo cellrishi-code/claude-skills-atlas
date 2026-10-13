@@ -1,32 +1,42 @@
 ---
 name: codebase-explorer
-description: Use when entering an unfamiliar codebase and you need to understand architecture, entry points, dependencies, conventions, and data flow before editing.
+category: coding
+tags: [codebase, architecture, exploration]
 ---
 
 # Codebase Explorer
 
+## Purpose
+
+Build a concise evidence-based model of an unfamiliar codebase before editing it.
+
+## When to use
+
+Use when entering an unfamiliar repository or when architecture, entry points, dependencies, conventions, or data flow are unclear.
+
 ## Instructions
 
-Build a concise mental model from evidence in the repository.
+Inspect relevant documentation, package or build configuration, entry points, directory structure, important modules, tests, and configuration. Then identify the project purpose, main entry points, major components, data/control flow, conventions, relevant files, and unknowns. Do not invent architecture unsupported by repository evidence.
 
-Inspect, as relevant:
+## Inputs
 
-- README and project documentation
-- package/build configuration
-- application entry points
-- directory structure
-- important modules
-- tests
-- configuration and environment handling
+- Repository or relevant source tree
+- Requested feature, bug, or investigation
 
-Then report:
+## Outputs
 
-1. Project purpose
-2. Main entry points
-3. Major components
-4. Data/control flow
-5. Important conventions
-6. Relevant files for the requested task
-7. Unknowns that require further inspection
+- Repository map
+- Entry points and major components
+- Relevant data/control flow
+- Relevant files and conventions
+- Unknowns requiring further inspection
 
-Do not invent architecture that is not supported by the repository.
+## Example
+
+User: "I just joined this project. Where should I implement authentication?"
+
+Expected behavior: inspect the repository and identify the existing authentication boundary and relevant files before suggesting changes.
+
+## Limitations
+
+Exploration can miss behavior hidden behind generated code, external services, runtime configuration, or undocumented operational systems.

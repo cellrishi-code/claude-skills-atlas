@@ -1,33 +1,36 @@
 ---
 name: codebase-understanding
-description: Build a reliable mental model of an unfamiliar repository before making changes. Use when entering a new codebase, investigating architecture, or when the user asks where a feature belongs.
+category: coding
+tags: [codebase, architecture, dependencies]
 ---
 
 # Codebase Understanding
 
-Build understanding before proposing edits. Prefer evidence from the repository over assumptions.
+## Purpose
 
-## Process
+Build a reliable mental model of an unfamiliar repository before proposing or implementing changes.
+
+## When to use
+
+Use when entering a new codebase, investigating architecture, or deciding where a feature belongs.
+
+## Instructions
 
 1. Identify entry points, package/build files, configuration, tests, and documentation.
 2. Map the relevant directory structure.
 3. Trace the execution path for the requested feature or bug.
-4. Identify important data models, interfaces, dependencies, and integration boundaries.
+4. Identify data models, interfaces, dependencies, and integration boundaries.
 5. Search for existing implementations before proposing new ones.
-6. Record constraints, conventions, and likely regression points.
-7. Summarize the model in a compact form before changing code.
+6. Record constraints, conventions, and regression points.
+7. Distinguish observed facts from hypotheses.
 
-## Rules
+## Inputs
 
-- Read targeted files before broad exploration.
-- Do not invent architecture that is not supported by repository evidence.
-- Prefer existing abstractions over introducing parallel ones.
-- Distinguish observed facts from hypotheses.
-- If the change crosses multiple layers, state the dependency order.
+- Repository or relevant files
+- Requested feature or bug
+- Existing documentation and tests
 
-## Output
-
-Return:
+## Outputs
 
 - Repository map
 - Relevant execution/data flow
@@ -35,3 +38,13 @@ Return:
 - Constraints and risks
 - Proposed change locations
 - Verification plan
+
+## Example
+
+User: "Where does this repository handle database connections?"
+
+Expected behavior: trace configuration and call sites to identify the existing database boundary instead of guessing from directory names.
+
+## Limitations
+
+Repository inspection may not reveal runtime behavior controlled by external services, deployment configuration, or undocumented conventions.

@@ -1,39 +1,52 @@
 ---
 name: debug-systematically
-description: Diagnose software failures systematically instead of guessing. Use for bugs, failing tests, unexpected output, crashes, regressions, and inconsistent behavior.
+category: coding
+tags: [debugging, diagnosis, failures]
 ---
 
 # Debug Systematically
 
-Treat debugging as evidence gathering and hypothesis elimination.
+## Purpose
 
-## Process
+Diagnose software failures using evidence and hypothesis elimination rather than guessing.
+
+## When to use
+
+Use for bugs, failing tests, unexpected output, crashes, regressions, or inconsistent behavior.
+
+## Instructions
 
 1. Reproduce the failure when possible.
 2. Capture the exact error, input, environment, and expected behavior.
 3. Minimize the failing case.
 4. Trace backward from the observable failure to the earliest incorrect state.
-5. Generate a small set of competing hypotheses.
-6. Test the cheapest hypothesis that can distinguish them.
+5. Generate competing hypotheses.
+6. Test the cheapest distinguishing hypothesis.
 7. Apply the smallest correct fix.
-8. Re-run the original reproduction and relevant regression tests.
-9. Explain the root cause, not only the patch.
+8. Re-run the original reproduction and regression tests.
+9. Explain the root cause.
+10. If the cause cannot be established, label it unresolved.
 
-## Rules
+## Inputs
 
-- Never change multiple unrelated things before verifying the cause.
-- Do not replace an error with silent fallback behavior unless intended.
-- Preserve useful diagnostic information.
-- Treat intermittent failures as evidence about timing, state, concurrency, caching, or environment.
-- If the cause cannot be established, label it unresolved rather than guessing.
+- Error or unexpected behavior
+- Reproduction steps or failing input
+- Expected behavior
+- Relevant code and environment
 
-## Output
-
-Return:
+## Outputs
 
 - Reproduction
-- Observed vs expected behavior
-- Root cause
+- Root cause or remaining uncertainty
 - Minimal fix
-- Verification
-- Remaining uncertainty
+- Verification results
+
+## Example
+
+User: "This test fails only when the input is empty."
+
+Expected behavior: isolate the empty-input case, trace the first invalid state, fix it, and rerun the relevant tests.
+
+## Limitations
+
+Intermittent or environment-dependent failures may require logs, instrumentation, or access to the runtime environment.

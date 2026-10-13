@@ -1,34 +1,48 @@
 ---
 name: implementation-planner
-description: Use when a coding task is large enough to require repository inspection, a plan, affected files, risks, and verification before implementation.
+category: coding
+tags: [planning, implementation, architecture]
 ---
 
 # Implementation Planner
 
-## Goal
+## Purpose
 
-Turn a coding request into an implementation plan before changing code.
+Turn a coding request into a concrete implementation plan before changes are made.
+
+## When to use
+
+Use when a coding task is large enough to require repository inspection, affected files, risks, and verification.
 
 ## Instructions
 
-1. Inspect the repository structure and relevant configuration.
+1. Inspect repository structure and relevant configuration.
 2. Identify the smallest set of files likely to change.
-3. Trace existing patterns before proposing a new abstraction.
-4. State assumptions instead of silently inventing requirements.
-5. Produce:
-   - objective
-   - current architecture relevant to the task
-   - files to inspect/change
-   - implementation steps
-   - risks and edge cases
-   - verification plan
-6. If important information is missing, ask focused questions before implementation.
-7. Do not modify files unless the user explicitly asks for implementation.
+3. Trace existing patterns before proposing abstractions.
+4. State assumptions explicitly.
+5. Produce the objective, relevant architecture, files, implementation steps, risks, and verification plan.
+6. Ask focused questions when critical information is missing.
+7. Do not modify files unless implementation is explicitly requested.
 
-## Output
+## Inputs
 
-Keep the plan concrete enough that another developer can execute it without rediscovering the repository.
+- Coding task
+- Repository context
+- Constraints or acceptance criteria
 
-## Source note
+## Outputs
 
-Inspired by recurring community recommendations to separate planning from implementation and keep work focused. See `docs/community-sources.md`.
+- Concrete implementation plan
+- Affected files
+- Risks and edge cases
+- Verification plan
+
+## Example
+
+User: "Plan the implementation of authentication for this API."
+
+Expected behavior: inspect the existing architecture and produce a focused file-by-file plan without changing code.
+
+## Limitations
+
+A plan may need revision when hidden requirements, runtime behavior, or external dependencies are discovered.

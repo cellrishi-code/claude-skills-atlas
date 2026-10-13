@@ -18,11 +18,11 @@ Use when a user wants to understand a paper's question, methods, results, limita
 
 1. Identify the research question and hypothesis.
 2. Identify the biological system and major methods.
-3. Summarize only the findings supported by the supplied text.
+3. Summarize only findings supported by the supplied text.
 4. Distinguish reported findings from interpretation.
-5. Identify controls and limitations when the paper describes them.
+5. Identify controls and limitations described by the paper.
 6. Flag missing information instead of guessing.
-7. Suggest follow-up questions or experiments only as proposals, not as reported results.
+7. Suggest follow-up questions or experiments only as proposals.
 
 ## Inputs
 
@@ -37,6 +37,12 @@ Use when a user wants to understand a paper's question, methods, results, limita
 - Limitations
 - Potential follow-up questions
 
+## Example
+
+User: "Analyze this paper's methods and explain whether the results support its main hypothesis."
+
+Expected behavior: summarize the reported methods and findings, map evidence to the hypothesis, and identify limitations.
+
 ## Limitations
 
-This skill does not replace expert scientific review and should not be used to invent experimental details or medical advice.
+This skill does not replace expert scientific review and should not be used to invent experimental details or provide medical advice.

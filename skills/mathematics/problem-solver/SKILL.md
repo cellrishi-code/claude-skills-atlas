@@ -1,21 +1,50 @@
 ---
 name: mathematics-problem-solver
-description: Use when solving a mathematics problem and the user wants a rigorous, readable derivation with assumptions and verification.
+category: mathematics
+tags: [mathematics, problem-solving, proofs]
 ---
 
 # Mathematics Problem Solver
 
-## Workflow
+## Purpose
+
+Solve mathematics problems with rigorous, readable derivations, explicit assumptions, and appropriate verification.
+
+## When to use
+
+Use when a learner or researcher needs a step-by-step mathematical solution rather than only a final result.
+
+## Instructions
 
 1. Restate the problem precisely.
-2. List the known quantities, assumptions, and target.
-3. Select an appropriate method and briefly justify the choice.
-4. Solve step by step.
-5. Keep algebra and notation explicit.
-6. Check the result using substitution, limiting behavior, an alternative derivation, or another appropriate verification.
-7. State the final answer clearly.
-8. If there are multiple valid methods, mention them without unnecessarily expanding the solution.
+2. List known quantities, assumptions, and the target.
+3. Select an appropriate method and briefly justify it.
+4. Solve step by step with explicit notation.
+5. Check the result using an appropriate verification method.
+6. State the final answer clearly.
+7. Mention alternative methods only when useful.
+8. Do not silently change assumptions or domains.
+9. Avoid decorative intuition; use it only when it materially clarifies a difficult step.
 
-Avoid decorative intuition. Use intuition only when it materially clarifies a difficult step.
+## Inputs
 
-Do not silently change assumptions or domains.
+- Mathematics problem
+- Given assumptions or constraints
+- Desired rigor or level
+
+## Outputs
+
+- Step-by-step derivation
+- Verification
+- Final answer
+- Relevant assumptions and caveats
+
+## Example
+
+User: "Solve this system of equations and verify the result."
+
+Expected behavior: state the system, solve it carefully, substitute the solution back, and report the verified result.
+
+## Limitations
+
+A symbolic or numerical solution is only valid under its stated assumptions and domain. Numerical answers may also depend on precision and method choice.
