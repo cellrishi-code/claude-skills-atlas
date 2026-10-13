@@ -1,0 +1,706 @@
+{
+  "schema_version": "1.0.0",
+  "generated_by": "scripts/generate_registry.py",
+  "resources": [
+    {
+      "name": "bioinformatics-planning",
+      "path": "skills/biology/bioinformatics-planning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "bioinformatics",
+        "genomics",
+        "pipelines"
+      ],
+      "capabilities": [
+        "bioinformatics",
+        "genomics",
+        "pipelines"
+      ],
+      "metadata": {
+        "name": "bioinformatics-planning",
+        "title": "Bioinformatics Workflow Planning",
+        "type": "skill",
+        "domain": "biology",
+        "tags": [
+          "bioinformatics",
+          "genomics",
+          "pipelines"
+        ],
+        "intended_use": "Plan reproducible bioinformatics workflows."
+      }
+    },
+    {
+      "name": "biology-literature-analysis",
+      "path": "skills/biology/literature-analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "biology",
+        "literature",
+        "evidence"
+      ],
+      "capabilities": [
+        "biology",
+        "literature",
+        "evidence"
+      ],
+      "metadata": {
+        "name": "biology-literature-analysis",
+        "title": "Biology Literature Analysis",
+        "type": "skill",
+        "domain": "biology",
+        "tags": [
+          "biology",
+          "literature",
+          "evidence"
+        ],
+        "intended_use": "Analyze biology research papers systematically."
+      }
+    },
+    {
+      "name": "biology-paper-analysis",
+      "path": "skills/biology/paper-analysis/SKILL.md",
+      "version": "1.0.0",
+      "category": "biology",
+      "tags": [
+        "biology",
+        "research",
+        "literature-analysis"
+      ],
+      "capabilities": [
+        "biology",
+        "research",
+        "literature-analysis"
+      ],
+      "metadata": {
+        "name": "biology-paper-analysis",
+        "category": "biology",
+        "tags": [
+          "biology",
+          "research",
+          "literature-analysis"
+        ]
+      }
+    },
+    {
+      "name": "chemistry-research-analysis",
+      "path": "skills/chemistry/research-analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "chemistry",
+        "research",
+        "mechanisms"
+      ],
+      "capabilities": [
+        "chemistry",
+        "research",
+        "mechanisms"
+      ],
+      "metadata": {
+        "name": "chemistry-research-analysis",
+        "title": "Chemistry Research Analysis",
+        "type": "skill",
+        "domain": "chemistry",
+        "tags": [
+          "chemistry",
+          "research",
+          "mechanisms"
+        ],
+        "intended_use": "Analyze chemistry literature and experimental claims."
+      }
+    },
+    {
+      "name": "skill-author",
+      "path": "skills/claude/skill-author/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "skill-author",
+        "description": "Design or improve a reusable Claude Agent Skill with precise activation criteria, focused instructions, examples, verification, and safe boundaries. Use when creating or refactoring a SKILL.md."
+      }
+    },
+    {
+      "name": "code-review",
+      "path": "skills/coding/code-review/SKILL.md",
+      "version": "1.0.0",
+      "category": "coding",
+      "tags": [
+        "code-review",
+        "software-engineering",
+        "debugging"
+      ],
+      "capabilities": [
+        "code-review",
+        "software-engineering",
+        "debugging"
+      ],
+      "metadata": {
+        "name": "code-review",
+        "category": "coding",
+        "tags": [
+          "code-review",
+          "software-engineering",
+          "debugging"
+        ]
+      }
+    },
+    {
+      "name": "codebase-explorer",
+      "path": "skills/coding/codebase-explorer/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "codebase-explorer",
+        "description": "Use when entering an unfamiliar codebase and you need to understand architecture, entry points, dependencies, conventions, and data flow before editing."
+      }
+    },
+    {
+      "name": "codebase-understanding",
+      "path": "skills/coding/codebase-understanding/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "codebase-understanding",
+        "description": "Build a reliable mental model of an unfamiliar repository before making changes. Use when entering a new codebase, investigating architecture, or when the user asks where a feature belongs."
+      }
+    },
+    {
+      "name": "debug-systematically",
+      "path": "skills/coding/debug-systematically/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "debug-systematically",
+        "description": "Diagnose software failures systematically instead of guessing. Use for bugs, failing tests, unexpected output, crashes, regressions, and inconsistent behavior."
+      }
+    },
+    {
+      "name": "implementation-planner",
+      "path": "skills/coding/implementation-planner/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "implementation-planner",
+        "description": "Use when a coding task is large enough to require repository inspection, a plan, affected files, risks, and verification before implementation."
+      }
+    },
+    {
+      "name": "implementation-review",
+      "path": "skills/coding/implementation-review/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "implementation-review",
+        "description": "Review an implementation against its requirements, repository conventions, correctness risks, tests, and maintainability. Use before opening a pull request or when reviewing completed work."
+      }
+    },
+    {
+      "name": "test-and-verify",
+      "path": "skills/coding/test-and-verify/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "test-and-verify",
+        "description": "Use after implementing code to systematically verify behavior, tests, regressions, and important edge cases."
+      }
+    },
+    {
+      "name": "algorithm-learning",
+      "path": "skills/computer-science/algorithm-learning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "algorithms",
+        "dsa",
+        "education"
+      ],
+      "capabilities": [
+        "algorithms",
+        "dsa",
+        "education"
+      ],
+      "metadata": {
+        "name": "algorithm-learning",
+        "title": "Algorithms Learning",
+        "type": "skill",
+        "domain": "computer-science",
+        "tags": [
+          "algorithms",
+          "dsa",
+          "education"
+        ],
+        "intended_use": "Teach an algorithms concept through explanation and practice."
+      }
+    },
+    {
+      "name": "system-design-basics",
+      "path": "skills/computer-science/system-design-basics/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "systems",
+        "architecture",
+        "scalability"
+      ],
+      "capabilities": [
+        "systems",
+        "architecture",
+        "scalability"
+      ],
+      "metadata": {
+        "name": "system-design-basics",
+        "title": "System Design Basics",
+        "type": "skill",
+        "domain": "computer-science",
+        "tags": [
+          "systems",
+          "architecture",
+          "scalability"
+        ],
+        "intended_use": "Structure an introductory system-design discussion."
+      }
+    },
+    {
+      "name": "defensive-security-review",
+      "path": "skills/cybersecurity/defensive-security-review/SKILL.md",
+      "version": "1.0.0",
+      "category": "cybersecurity",
+      "tags": [
+        "security",
+        "code-review",
+        "threat-modeling",
+        "authorized-testing"
+      ],
+      "capabilities": [
+        "security",
+        "code-review",
+        "threat-modeling",
+        "authorized-testing"
+      ],
+      "metadata": {
+        "name": "defensive-security-review",
+        "category": "cybersecurity",
+        "tags": [
+          "security",
+          "code-review",
+          "threat-modeling",
+          "authorized-testing"
+        ]
+      }
+    },
+    {
+      "name": "threat-modeling",
+      "path": "skills/cybersecurity/threat-modeling/SKILL.md",
+      "version": "1.0.0",
+      "category": "cybersecurity",
+      "tags": [
+        "threat-modeling",
+        "architecture",
+        "security-design"
+      ],
+      "capabilities": [
+        "threat-modeling",
+        "architecture",
+        "security-design"
+      ],
+      "metadata": {
+        "name": "threat-modeling",
+        "category": "cybersecurity",
+        "tags": [
+          "threat-modeling",
+          "architecture",
+          "security-design"
+        ]
+      }
+    },
+    {
+      "name": "data-analysis",
+      "path": "skills/data/analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "data-analysis",
+        "description": "Use when analyzing a dataset and producing reproducible findings, tables, visualizations, or statistical conclusions."
+      }
+    },
+    {
+      "name": "tutor",
+      "path": "skills/education/tutor/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "tutor",
+        "description": "Use when teaching a technical concept and the learner needs a structured explanation, examples, checks for understanding, and practice."
+      }
+    },
+    {
+      "name": "experiment-analysis",
+      "path": "skills/machine-learning/experiment-analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "experiments",
+        "reproducibility",
+        "tracking"
+      ],
+      "capabilities": [
+        "experiments",
+        "reproducibility",
+        "tracking"
+      ],
+      "metadata": {
+        "name": "experiment-analysis",
+        "title": "ML Experiment Analysis",
+        "type": "skill",
+        "domain": "machine-learning",
+        "tags": [
+          "experiments",
+          "reproducibility",
+          "tracking"
+        ],
+        "intended_use": "Compare machine-learning experiments reproducibly."
+      }
+    },
+    {
+      "name": "model-evaluation",
+      "path": "skills/machine-learning/model-evaluation/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "evaluation",
+        "metrics",
+        "experiments"
+      ],
+      "capabilities": [
+        "evaluation",
+        "metrics",
+        "experiments"
+      ],
+      "metadata": {
+        "name": "model-evaluation",
+        "title": "Machine Learning Model Evaluation",
+        "type": "skill",
+        "domain": "machine-learning",
+        "tags": [
+          "evaluation",
+          "metrics",
+          "experiments"
+        ],
+        "intended_use": "Evaluate an ML model without relying on a single metric."
+      }
+    },
+    {
+      "name": "numerical-methods",
+      "path": "skills/mathematics/numerical-methods/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "numerical-analysis",
+        "algorithms",
+        "error"
+      ],
+      "capabilities": [
+        "numerical-analysis",
+        "algorithms",
+        "error"
+      ],
+      "metadata": {
+        "name": "numerical-methods",
+        "title": "Numerical Methods",
+        "type": "skill",
+        "domain": "mathematics",
+        "tags": [
+          "numerical-analysis",
+          "algorithms",
+          "error"
+        ],
+        "intended_use": "Solve numerical-method problems with explicit convergence and error checks."
+      }
+    },
+    {
+      "name": "mathematics-problem-solver",
+      "path": "skills/mathematics/problem-solver/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "mathematics-problem-solver",
+        "description": "Use when solving a mathematics problem and the user wants a rigorous, readable derivation with assumptions and verification."
+      }
+    },
+    {
+      "name": "proof-solving",
+      "path": "skills/mathematics/proof-solving/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "proofs",
+        "reasoning",
+        "mathematics"
+      ],
+      "capabilities": [
+        "proofs",
+        "reasoning",
+        "mathematics"
+      ],
+      "metadata": {
+        "name": "proof-solving",
+        "title": "Mathematics Proof Solving",
+        "type": "skill",
+        "domain": "mathematics",
+        "tags": [
+          "proofs",
+          "reasoning",
+          "mathematics"
+        ],
+        "intended_use": "Structure rigorous mathematical proofs."
+      }
+    },
+    {
+      "name": "physics-research-analysis",
+      "path": "skills/physics/research-analysis/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "physics",
+        "research",
+        "evidence"
+      ],
+      "capabilities": [
+        "physics",
+        "research",
+        "evidence"
+      ],
+      "metadata": {
+        "name": "physics-research-analysis",
+        "title": "Physics Research Analysis",
+        "type": "skill",
+        "domain": "physics",
+        "tags": [
+          "physics",
+          "research",
+          "evidence"
+        ],
+        "intended_use": "Analyze physics research claims and experimental or theoretical evidence."
+      }
+    },
+    {
+      "name": "data-cleaning",
+      "path": "skills/python/data-cleaning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "python",
+        "pandas",
+        "cleaning"
+      ],
+      "capabilities": [
+        "python",
+        "pandas",
+        "cleaning"
+      ],
+      "metadata": {
+        "name": "data-cleaning",
+        "title": "Python Data Cleaning",
+        "type": "skill",
+        "domain": "python-data-science",
+        "tags": [
+          "python",
+          "pandas",
+          "cleaning"
+        ],
+        "intended_use": "Clean tabular data reproducibly."
+      }
+    },
+    {
+      "name": "data-visualization",
+      "path": "skills/python/data-visualization/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "python",
+        "visualization",
+        "matplotlib"
+      ],
+      "capabilities": [
+        "python",
+        "visualization",
+        "matplotlib"
+      ],
+      "metadata": {
+        "name": "data-visualization",
+        "title": "Python Data Visualization",
+        "type": "skill",
+        "domain": "python-data-science",
+        "tags": [
+          "python",
+          "visualization",
+          "matplotlib"
+        ],
+        "intended_use": "Choose and build clear data visualizations."
+      }
+    },
+    {
+      "name": "evidence-checker",
+      "path": "skills/research/evidence-checker/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "evidence-checker",
+        "description": "Use when reviewing factual claims, research notes, technical statements, or literature summaries against supplied evidence."
+      }
+    },
+    {
+      "name": "evidence-comparison",
+      "path": "skills/research/evidence-comparison/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "literature",
+        "evidence",
+        "claims"
+      ],
+      "capabilities": [
+        "literature",
+        "evidence",
+        "claims"
+      ],
+      "metadata": {
+        "name": "evidence-comparison",
+        "title": "Evidence Comparison",
+        "type": "skill",
+        "domain": "research",
+        "tags": [
+          "literature",
+          "evidence",
+          "claims"
+        ],
+        "intended_use": "Compare multiple sources without treating disagreement as automatically equivalent evidence."
+      }
+    },
+    {
+      "name": "experimental-planning",
+      "path": "skills/research/experimental-planning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "experiment",
+        "reproducibility",
+        "controls"
+      ],
+      "capabilities": [
+        "experiment",
+        "reproducibility",
+        "controls"
+      ],
+      "metadata": {
+        "name": "experimental-planning",
+        "title": "Experimental Planning",
+        "type": "skill",
+        "domain": "research",
+        "tags": [
+          "experiment",
+          "reproducibility",
+          "controls"
+        ],
+        "intended_use": "Design a reproducible research experiment or study plan."
+      }
+    },
+    {
+      "name": "literature-synthesizer",
+      "path": "skills/research/literature-synthesizer/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "literature-synthesizer",
+        "description": "Use when synthesizing multiple research papers or supplied sources into themes, disagreements, evidence gaps, and research opportunities."
+      }
+    },
+    {
+      "name": "research-question",
+      "path": "skills/research/research-question/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "research-question",
+        "description": "Turn a broad research request into a precise, answerable investigation with claims, evidence requirements, search strategy, and uncertainty tracking."
+      }
+    },
+    {
+      "name": "source-verification",
+      "path": "skills/research/source-verification/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "source-verification",
+        "description": "Verify important factual claims before they are repeated in research, technical writing, or documentation. Use when sources may be outdated, secondary, conflicting, or difficult to interpret."
+      }
+    },
+    {
+      "name": "api-design",
+      "path": "skills/web-development/api-design/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "api",
+        "backend",
+        "http"
+      ],
+      "capabilities": [
+        "api",
+        "backend",
+        "http"
+      ],
+      "metadata": {
+        "name": "api-design",
+        "title": "API Design",
+        "type": "skill",
+        "domain": "web-development",
+        "tags": [
+          "api",
+          "backend",
+          "http"
+        ],
+        "intended_use": "Design a maintainable HTTP API."
+      }
+    },
+    {
+      "name": "frontend-planning",
+      "path": "skills/web-development/frontend-planning/SKILL.md",
+      "version": "1.0.0",
+      "tags": [
+        "frontend",
+        "architecture",
+        "accessibility"
+      ],
+      "capabilities": [
+        "frontend",
+        "architecture",
+        "accessibility"
+      ],
+      "metadata": {
+        "name": "frontend-planning",
+        "title": "Frontend Planning",
+        "type": "skill",
+        "domain": "web-development",
+        "tags": [
+          "frontend",
+          "architecture",
+          "accessibility"
+        ],
+        "intended_use": "Plan a frontend feature before implementation."
+      }
+    },
+    {
+      "name": "technical-editor",
+      "path": "skills/writing/technical-editor/SKILL.md",
+      "version": "1.0.0",
+      "tags": [],
+      "capabilities": [],
+      "metadata": {
+        "name": "technical-editor",
+        "description": "Use when editing technical writing for clarity, structure, precision, grammar, and consistent terminology while preserving the author's meaning."
+      }
+    }
+  ]
+}

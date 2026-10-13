@@ -101,6 +101,20 @@ python -m unittest discover tests
 A pull request that changes Atlas resources or validation tooling is checked automatically by GitHub Actions.
 
 
+### Machine-readable registry
+
+`registry.json` is the generated discovery index for Atlas skills. It is intended for scripts, plugins, and AI-agent integrations that need structured discovery without crawling the repository.
+
+Each entry includes the resource name, stable path, version, category, tags, capabilities, and source metadata. The registry schema is documented in [`schema/resource-registry.schema.json`](schema/resource-registry.schema.json).
+
+Regenerate it after changing skills:
+
+```bash
+python scripts/generate_registry.py
+```
+
+CI verifies that the checked-in registry stays synchronized with the repository.
+
 ### Browse the library
 
 ```text
