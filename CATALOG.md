@@ -15,6 +15,7 @@ Generated from repository resources. Do not edit manually.
 - [Debug Systematically](skills/coding/debug-systematically/SKILL.md)
 - [Implementation Planner](skills/coding/implementation-planner/SKILL.md)
 - [Implementation Review](skills/coding/implementation-review/SKILL.md)
+- [Open Source Contribution](skills/coding/open-source-contribution/SKILL.md)
 - [Ledger Tasks (YYLO)](skills/coding/ledger-tasks-yylo/SKILL.md)
 - [Test and Verify](skills/coding/test-and-verify/SKILL.md)
 - [Algorithms Learning](skills/computer-science/algorithm-learning/SKILL.md)
